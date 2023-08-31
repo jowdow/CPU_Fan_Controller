@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (10.3-2021.10)
+# Toolchain: GNU Tools for STM32 (11.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -60,8 +60,8 @@ all: main-build
 main-build: CPU_Fan_Controller.elf secondary-outputs
 
 # Tool invocations
-CPU_Fan_Controller.elf CPU_Fan_Controller.map: $(OBJS) $(USER_OBJS) C:\Users\josep\Documents\Projects\CPU_Fan_Controller\Software\CPU_Fan_Controller\STM32G030J6MX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "CPU_Fan_Controller.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\josep\Documents\Projects\CPU_Fan_Controller\Software\CPU_Fan_Controller\STM32G030J6MX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CPU_Fan_Controller.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+CPU_Fan_Controller.elf CPU_Fan_Controller.map: $(OBJS) $(USER_OBJS) C:\Users\josep\Documents\Projects\CPU_Fan_Controller\CPU_Fan_Controller\Software\CPU_Fan_Controller\STM32G030J6MX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "CPU_Fan_Controller.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\josep\Documents\Projects\CPU_Fan_Controller\CPU_Fan_Controller\Software\CPU_Fan_Controller\STM32G030J6MX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CPU_Fan_Controller.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

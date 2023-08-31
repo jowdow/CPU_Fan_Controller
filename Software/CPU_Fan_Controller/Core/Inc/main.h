@@ -29,6 +29,16 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g0xx_hal.h"
 
+#include "stm32g0xx_ll_system.h"
+#include "stm32g0xx_ll_gpio.h"
+#include "stm32g0xx_ll_exti.h"
+#include "stm32g0xx_ll_bus.h"
+#include "stm32g0xx_ll_cortex.h"
+#include "stm32g0xx_ll_rcc.h"
+#include "stm32g0xx_ll_utils.h"
+#include "stm32g0xx_ll_pwr.h"
+#include "stm32g0xx_ll_dma.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -53,16 +63,19 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+extern uint8_t isFanSpinning;
+extern uint32_t ADCValue_u32;
+extern uint32_t previousADCValue_u32;
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Potentiometer_Pin GPIO_PIN_7
+#define Potentiometer_Pin LL_GPIO_PIN_7
 #define Potentiometer_GPIO_Port GPIOB
-#define Fan_PWM_Pin GPIO_PIN_8
+#define Fan_PWM_Pin LL_GPIO_PIN_8
 #define Fan_PWM_GPIO_Port GPIOA
-#define Button_Input_Pin GPIO_PIN_12
+#define Button_Input_Pin LL_GPIO_PIN_12
 #define Button_Input_GPIO_Port GPIOA
+#define Button_Input_EXTI_IRQn EXTI4_15_IRQn
 
 /* USER CODE BEGIN Private defines */
 

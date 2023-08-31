@@ -97,10 +97,10 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     /**ADC1 GPIO Configuration
     PB7     ------> ADC1_IN11
     */
-    GPIO_InitStruct.Pin = Potentiometer_Pin;
+    GPIO_InitStruct.Pin = GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(Potentiometer_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
@@ -122,7 +122,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     /**ADC1 GPIO Configuration
     PB7     ------> ADC1_IN11
     */
-    HAL_GPIO_DeInit(Potentiometer_GPIO_Port, Potentiometer_Pin);
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_7);
 
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 

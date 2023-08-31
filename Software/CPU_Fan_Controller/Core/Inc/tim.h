@@ -35,8 +35,6 @@ extern "C" {
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN Private defines */
-#define  PERIOD_VALUE       (uint32_t)(333 - 1)  /* Period Value  */
-#define  PULSE1_VALUE       (uint32_t)(PERIOD_VALUE/2)        /* Capture Compare 1 Value  */
 /* USER CODE END Private defines */
 
 void MX_TIM1_Init(void);

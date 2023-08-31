@@ -1,4 +1,9 @@
 /* USER CODE BEGIN Header */
+/*
+ * @Author Joseph Douglas
+ * @Date   8/28/2023
+ * @Description Start, stop ,and adjust PWM for a CPU fan
+ * */
 /**
   ******************************************************************************
   * @file           : main.c
@@ -45,7 +50,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint8_t isFanSpinning = 0;
+uint32_t ADCValue_u32 = 0;
+uint32_t previousADCValue_u32 = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,8 +73,6 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
-	//JD - 10 second delay to be able to flash the chip
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -91,42 +96,12 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint8_t isButtonPressed = 0;
-  uint8_t isFanSpinning = 0;
 
   while (1)
   {
-
-	  if(HAL_GPIO_ReadPin(Button_Input_GPIO_Port, Button_Input_Pin) && !isButtonPressed){
-		  if(isFanSpinning == 0){
-			  if (HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1) != HAL_OK)
-			  {
-				/* PWM Generation Error */
-				Error_Handler();
-			  }
-			  isFanSpinning = 1;
-		  }
-		  else{
-			  if (HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1) != HAL_OK)
-			  {
-				/* PWM Generation Error */
-				Error_Handler();
-			  }
-			  isFanSpinning = 0;
-		  }
-		  isButtonPressed = 1;
-	  }
-	  else if(HAL_GPIO_ReadPin(Button_Input_GPIO_Port, Button_Input_Pin) == 0){
-		  isButtonPressed = 0;
-	  }
-
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
 
   }
