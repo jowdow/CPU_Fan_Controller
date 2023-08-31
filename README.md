@@ -16,8 +16,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    ![logo](https://github.com/jowdow/CPU_FanController/Hardware/Pictures/Bottom_3D.png)
-
+  <img alt="Logo" src="Hardware/Pictures/Bottom_3D.PNG">
 <h3 align="center">CPU Fan Controller</h3>
 
   <p align="center">
@@ -59,9 +58,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="" alt="Logo" width="450" height="512">
+<img src="Hardware/Pictures/Side_3D.PNG" alt="Logo">
+<img src="Hardware/Pictures/Top_3D.PNG" alt="Logo">
+<img src="Hardware/Pictures/Bottom_3D.PNG" alt="Logo">
 
-FILLER
+This is a PWM-based CPU fan speed controller using a potentiometer, a button, and USB-C PD to function. Once the button is pressed it starts the fan at a speed that is set by the value the potentiometer is at.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
